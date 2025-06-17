@@ -36,11 +36,10 @@ export const fetchQuote = async (stockSymbol) => {
     }
 
    return await response.json();
-}
+};
 
 export const fetchHistoricalData = async (stockSymbol, resolution, from, to) => {
     const url = `${basePath}/stock/candle?symbol=${stockSymbol}&resolution=${resolution}&from=${from}&to=${to}&token=${apiKey}`;
-    console.log(url);
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -49,5 +48,4 @@ export const fetchHistoricalData = async (stockSymbol, resolution, from, to) => 
     }
 
     return await response.json();
-
-}
+};
